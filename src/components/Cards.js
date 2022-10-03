@@ -74,7 +74,7 @@ const FrontCard = styled.div`
   background: #FFFFD5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  font-family: 'Recursive';
+  font-family: 'Recursive',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;  
@@ -116,7 +116,7 @@ width: 300px;
   justify-content: space-between;
 
   p{
-    font-family: 'Recursive';
+    font-family: 'Recursive',sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -139,7 +139,7 @@ const Buttons = styled.div`
 `
 const Button = styled.button`
 width: 85px;
-  font-family: 'Recursive';
+  font-family: 'Recursive',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

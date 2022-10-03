@@ -17,7 +17,7 @@ display: flex;
     width: 52px;
   }
   h1{
-    font-family: 'Righteous';
+    font-family: 'Righteous',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 36px;

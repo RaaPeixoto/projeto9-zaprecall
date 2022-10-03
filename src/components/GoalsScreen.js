@@ -22,7 +22,7 @@ img{
     width: 136px;
   }
   h1{
-    font-family: 'Righteous';
+    font-family: 'Righteous',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -42,7 +42,7 @@ width: 246px;
 height: 43px;
 background: #FFFFFF;
 border-radius: 5px;
-font-family: 'Roboto';
+font-family: 'Roboto',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -51,7 +51,7 @@ color: #FB6B6B;
 opacity: 0.9;
 margin-top:25px;
 &::placeholder{
-    font-family: 'Roboto';
+    font-family: 'Roboto',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -66,7 +66,7 @@ width: 246px;
 height: 54px;
 background: #FFFFFF;
 border-radius: 5px;
-font-family: 'Recursive';
+font-family: 'Recursive',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;

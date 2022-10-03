@@ -52,7 +52,7 @@ img{
     width: 136px;
   }
   h1{
-    font-family: 'Righteous';
+    font-family: 'Righteous',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -73,7 +73,7 @@ height: 43px;
 background: #FFFFFF;
 border-radius: 5px;
 margin-top:25px;
-font-family: 'Roboto';
+font-family: 'Roboto',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -95,7 +95,7 @@ border: 1px solid #D70900;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 border-radius: 5px;
 
-font-family: 'Recursive';
+font-family: 'Recursive',sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;

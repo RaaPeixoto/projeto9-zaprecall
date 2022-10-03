@@ -38,7 +38,7 @@ const Footer = styled.div`
 flex-direction:column;
   align-items: center;
   justify-content: center;
-  font-family: 'Recursive';
+  font-family: 'Recursive',sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: #333333;
