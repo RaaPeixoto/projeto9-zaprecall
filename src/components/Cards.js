@@ -5,9 +5,9 @@ import redIcon from "../assets/img/icone_erro.png"
 import orangeIcon from "../assets/img/icone_quase.png"
 import play from "../assets/img/seta_play.png"
 import rotate from "../assets/img/seta_virar.png"
-export default function Cards({ card, index, selectedCard, openCard, rotateCard, rotatedCard, redButtonClicked,  orangeButtonClicked,  greenButtonClicked, colorButton}) {
+export default function Cards({ card, index, selectedCard, openCard, rotateCard, rotatedCard, redButtonClicked, orangeButtonClicked, greenButtonClicked, colorButton }) {
 
-  
+
 
 
   return (
@@ -19,9 +19,9 @@ export default function Cards({ card, index, selectedCard, openCard, rotateCard,
           {rotatedCard.includes(index) ?
             <BackCard index={index} rotadedCard={rotatedCard}> <p>{card.resposta} </p>
               <Buttons>
-                <Button color="#FF3030" value="red" index={index} onClick={(e) => colorButton(index,e.target.value)}>Não lembrei</Button>
-                <Button color="#FF922E" value="orange"  index={index} onClick={(e) => colorButton(index,e.target.value)}>Quase não lembrei</Button>
-                <Button color="#2FBE34" value="green"  index={index} onClick={(e) => colorButton(index,e.target.value)}>Edureka!</Button>
+                <Button color="#FF3030" value="red" index={index} onClick={(e) => colorButton(index, e.target.value)}>Não lembrei</Button>
+                <Button color="#FF922E" value="orange" index={index} onClick={(e) => colorButton(index, e.target.value)}>Quase não lembrei</Button>
+                <Button color="#2FBE34" value="green" index={index} onClick={(e) => colorButton(index, e.target.value)}>Edureka!</Button>
               </Buttons>
             </BackCard> :
             <FrontCard index={index} rotadedCard={rotatedCard}>{card.pergunta} <img src={rotate} onClick={() => rotateCard(index)} alt="rotate" /></FrontCard>}

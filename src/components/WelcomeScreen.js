@@ -1,15 +1,15 @@
 import logo from "../assets/img/logo.png"
 import styled from "styled-components"
 
-export default function WelcomeScreen ({changePage}){
+export default function WelcomeScreen({ changePage }) {
     return (
         <>
-          <Logo> <img src={logo} alt="Logo"/> <h1><span>Edu</span>reka!</h1></Logo>
-    
-        <Button onClick={()=>changePage ("HomeScreen")}> Inicial Recall!</Button>
+            <Logo> <img src={logo} alt="Logo" /> <h1><span>Edu</span>reka!</h1></Logo>
+
+            <Button onClick={() => changePage("HomeScreen")}> Inicial Recall!</Button>
         </>
-      )
-    
+    )
+
 }
 
 const Logo = styled.div`
@@ -28,7 +28,8 @@ img{
   font-size: 36px;
   line-height: 45px;
   color: #FFFFFF;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-top: 13px;
   box-sizing:border-box;
 }
 span{
@@ -36,7 +37,7 @@ span{
 }
 `
 
-const Button = styled.button `
+const Button = styled.button`
 
 width: 246px;
 height: 54px;

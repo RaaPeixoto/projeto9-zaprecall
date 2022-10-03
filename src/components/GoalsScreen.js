@@ -1,11 +1,11 @@
 import logo from "../assets/img/logo.png"
 import styled from "styled-components"
-export default function GoalsScreen({ chooseGoal,playRecall,disableButton }){
+export default function GoalsScreen({ chooseGoal, playRecall, disableButton }) {
 
-    return(
+    return (
         <>
-           <Logo> <img src={logo} alt="Logo"/> <h1><span>Edu</span>reka!</h1></Logo>
-            <Input placeholder="Digite sua meta de zaps..." onChange={(e)=>chooseGoal(e.target.value)}></Input>
+            <Logo> <img src={logo} alt="Logo" /> <h1><span>Edu</span>reka!</h1></Logo>
+            <Input placeholder="Digite sua meta de zaps..." onChange={(e) => chooseGoal(e.target.value)}></Input>
             <Button disabled={disableButton} onClick={playRecall}>Iniciar Recall!</Button>
         </>
     )
@@ -28,7 +28,8 @@ img{
   font-size: 36px;
   line-height: 45px;
   color: #FFFFFF;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-top: 13px;
   box-sizing:border-box;
 }
 span{
@@ -60,7 +61,7 @@ color: #ADADAD;
 }
 `
 
-const Button=styled.button`
+const Button = styled.button`
 width: 246px;
 height: 54px;
 background: #FFFFFF;

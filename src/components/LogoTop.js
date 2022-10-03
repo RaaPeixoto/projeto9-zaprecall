@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import logo from "../assets/img/logo.png"
-export default function LogoTop (){
-    return(
-        <LogoContainer>
-            <img src={logo} alt="logo"></img>
-            <h1><span>Edu</span>reka!</h1>
-        </LogoContainer>
-    )
+export default function LogoTop() {
+  return (
+    <LogoContainer>
+      <img src={logo} alt="logo"></img>
+      <h1><span>Edu</span>reka!</h1>
+    </LogoContainer>
+  )
 }
 
 const LogoContainer = styled.div`

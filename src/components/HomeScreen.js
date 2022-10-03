@@ -1,42 +1,42 @@
 import logo from "../assets/img/logo.png"
 import styled from "styled-components"
-import { cards, cards2,cards3,cards4 } from "../assets/cards"
+import { cards, cards2, cards3, cards4 } from "../assets/cards"
 
 
-export default function HomeScreen({deck,changePage,setDeck}) {
-  function witchCards(e){
+export default function HomeScreen({ deck, changePage, setDeck }) {
+  function witchCards(e) {
 
-      switch (e.target.value){
-        case "cards":
-          setDeck(cards);
-          break;
-          case "cards2":
-            setDeck(cards2);
-            break;
-            case "cards3":
-            setDeck(cards3);
-            break;
-            case "cards4":
-            setDeck(cards4);
-            break;
-            default: 
-            console.log(e)
-  
+    switch (e.target.value) {
+      case "cards":
+        setDeck(cards);
+        break;
+      case "cards2":
+        setDeck(cards2);
+        break;
+      case "cards3":
+        setDeck(cards3);
+        break;
+      case "cards4":
+        setDeck(cards4);
+        break;
+      default:
+        console.log(e)
+
     }
-       
-}
+
+  }
   return (
     <>
-      <Logo> <img src={logo} alt="Logo"/> <h1><span>Edu</span>reka!</h1></Logo>
-     <Select onChange={witchCards}  defaultValue="">
-      <option value="" disabled={true}>Escolha seu deck</option>
-      <option value="cards">Ciências</option>
-      <option value="cards2">Geografia</option>
-      <option value="cards3">Matemática</option>
-      <option value="cards4">Português</option>
-     </Select>
+      <Logo> <img src={logo} alt="Logo" /> <h1><span>Edu</span>reka!</h1></Logo>
+      <Select onChange={witchCards} defaultValue="">
+        <option value="" disabled={true}>Escolha seu deck</option>
+        <option value="cards">Ciências</option>
+        <option value="cards2">Geografia</option>
+        <option value="cards3">Matemática</option>
+        <option value="cards4">Português</option>
+      </Select>
 
-    <Button onClick={()=>changePage ("GoalsScreen")}> Inicial Recall!</Button>
+      <Button onClick={() => changePage("GoalsScreen")}> Inicial Recall!</Button>
     </>
   )
 }
@@ -58,7 +58,8 @@ img{
   font-size: 36px;
   line-height: 45px;
   color: #FFFFFF;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-top: 13px;
   box-sizing:border-box;
 }
 span{
@@ -84,7 +85,7 @@ color: #ADADAD;
 
 `
 
-const Button = styled.button `
+const Button = styled.button`
 
 width: 246px;
 height: 54px;
