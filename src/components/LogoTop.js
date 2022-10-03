@@ -19,7 +19,7 @@ display: flex;
   h1{
     font-family: 'Righteous',sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 36px;
   line-height: 45px;
   color: #FFFFFF;
