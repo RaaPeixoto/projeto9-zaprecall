@@ -52,6 +52,7 @@ export default function PlayScreen({ deck, selectedCard, setSelectedCard, openCa
           greenButtonClicked={greenButtonClicked}
           colorButton={colorButton}
           setScreen={setScreen}
+          
         />)}
       <Bottom cardsDone={cardsDone} greenButtonClicked={greenButtonClicked} orangeButtonClicked={orangeButtonClicked} redButtonClicked={redButtonClicked} deck={deck} />
     </  >

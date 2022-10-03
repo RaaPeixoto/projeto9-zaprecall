@@ -9,7 +9,7 @@ export default function Bottom({ cardsDone, greenButtonClicked, orangeButtonClic
     return (
         <Footer>
 
-            <p>{cardsDone.length}/{deck.length}</p>
+            <p data-identifier="flashcard-counter">{cardsDone.length}/{deck.length}</p>
             <IconsContainer>
                 {deck.map((i, index) => greenButtonClicked.includes(index) ?
                     <img src={greenIcon} alt="Green Icon" key={index} />

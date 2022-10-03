@@ -28,15 +28,15 @@ export default function HomeScreen({ deck, changePage, setDeck }) {
   return (
     <>
       <Logo> <img src={logo} alt="Logo" /> <h1><span>Edu</span>reka!</h1></Logo>
-      <Select onChange={witchCards} defaultValue="">
-        <option value="" disabled={true}>Escolha seu deck</option>
-        <option value="cards">Ciências</option>
-        <option value="cards2">Geografia</option>
-        <option value="cards3">Matemática</option>
-        <option value="cards4">Português</option>
+      <Select data-identifier="deck-selector" onChange={witchCards} defaultValue="">
+        <option data-identifier="deck-option" value="" disabled={true}>Escolha seu deck</option>
+        <option data-identifier="deck-option" value="cards">Ciências</option>
+        <option data-identifier="deck-option" value="cards2">Geografia</option>
+        <option data-identifier="deck-option" value="cards3">Matemática</option>
+        <option data-identifier="deck-option" value="cards4">Português</option>
       </Select>
 
-      <Button onClick={() => changePage("GoalsScreen")}> Inicial Recall!</Button>
+      <Button data-identifier="start-btn" onClick={() => changePage("GoalsScreen")}> Inicial Recall!</Button>
     </>
   )
 }

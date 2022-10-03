@@ -48,7 +48,7 @@ export default function App() {
         console.log(e)
     }
     function playRecall() {
-        if (!isNaN(goalNumber) && goalNumber >1 && goalNumber < 8) {
+        if (!isNaN(goalNumber) && goalNumber >=1 && goalNumber < 8) {
             changePage("PlayScreen")
         } else {
             alert("Por favor digite um número de 1 a 8")

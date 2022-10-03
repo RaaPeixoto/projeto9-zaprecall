@@ -17,41 +17,41 @@ export default function Cards({ card, index, selectedCard, openCard, rotateCard,
         /* rotatedCard.includes(index)? // verifica se vai estar virada ou não  */
         <>
           {rotatedCard.includes(index) ?
-            <BackCard index={index} rotadedCard={rotatedCard}> <p>{card.resposta} </p>
+            <BackCard index={index} rotadedCard={rotatedCard}> <p data-identifier="flashcard-answer">{card.resposta} </p>
               <Buttons>
-                <Button color="#FF3030" value="red" index={index} onClick={(e) => colorButton(index, e.target.value)}>Não lembrei</Button>
-                <Button color="#FF922E" value="orange" index={index} onClick={(e) => colorButton(index, e.target.value)}>Quase não lembrei</Button>
-                <Button color="#2FBE34" value="green" index={index} onClick={(e) => colorButton(index, e.target.value)}>Edureka!</Button>
+                <Button data-identifier="forgot-btn" color="#FF3030" value="red" index={index} onClick={(e) => colorButton(index, e.target.value)}>Não lembrei</Button>
+                <Button data-identifier="almost-forgot-btn" color="#FF922E" value="orange" index={index} onClick={(e) => colorButton(index, e.target.value)}>Quase não lembrei</Button>
+                <Button data-identifier="zap-btn"color="#2FBE34" value="green" index={index} onClick={(e) => colorButton(index, e.target.value)}>Edureka!</Button>
               </Buttons>
             </BackCard> :
-            <FrontCard index={index} rotadedCard={rotatedCard}>{card.pergunta} <img src={rotate} onClick={() => rotateCard(index)} alt="rotate" /></FrontCard>}
+            <FrontCard index={index} rotadedCard={rotatedCard}> <p data-identifier="flashcard-question">{card.pergunta}</p> <img src={rotate} onClick={() => rotateCard(index)} alt="rotate" data-identifier="flashcard-turn-btn"/></FrontCard>}
         </>
         :
         //se não incluir na carta aberta
 
         <>
           {greenButtonClicked.includes(index) ?
-            <ClosedCard index={index} colorItem="#2FBE34" textDecoration="line-through">
-              <p>Pergunta {index + 1}</p>
-              <img src={greenIcon} alt="Green Icon" />
+            <ClosedCard index={index} colorItem="#2FBE34" textDecoration="line-through" data-identifier="flashcard">
+              <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
+              <img src={greenIcon} alt="Green Icon" data-identifier="flashcard-status"/>
             </ClosedCard>
             :
 
             orangeButtonClicked.includes(index) ?
-              <ClosedCard index={index} colorItem="#FF922E" textDecoration="line-through">
-                <p>Pergunta {index + 1}</p>
-                <img src={orangeIcon} alt="Orange Icon" />
+              <ClosedCard index={index} colorItem="#FF922E" data-identifier="flashcard">
+                <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
+                <img src={orangeIcon} alt="Orange Icon" data-identifier="flashcard-status"/>
               </ClosedCard>
               :
               redButtonClicked.includes(index) ?
-                <ClosedCard index={index} colorItem="#FF3030" textDecoration="line-through">
-                  <p>Pergunta {index + 1}</p>
-                  <img src={redIcon} alt="Red Icon" />
+                <ClosedCard index={index} colorItem="#FF3030" textDecoration="line-through" data-identifier="flashcard">
+                  <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
+                  <img src={redIcon} alt="Red Icon" data-identifier="flashcard-status"/>
                 </ClosedCard>
                 :
-                <ClosedCard index={index} colorItem="#333333" textDecoration="none">
-                  <p >Pergunta {index + 1}</p>
-                  <img src={play} onClick={() => openCard(index)} alt="play" />
+                <ClosedCard index={index} colorItem="#333333" textDecoration="none" data-identifier="flashcard" >
+                  <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
+                  <img src={play} onClick={() => openCard(index)} alt="play" data-identifier="flashcard-show-btn"/>
                 </ClosedCard>
           }
 

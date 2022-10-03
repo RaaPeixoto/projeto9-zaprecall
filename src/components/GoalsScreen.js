@@ -5,7 +5,7 @@ export default function GoalsScreen({ chooseGoal, playRecall, disableButton }) {
     return (
         <>
             <Logo> <img src={logo} alt="Logo" /> <h1><span>Edu</span>reka!</h1></Logo>
-            <Input placeholder="Digite sua meta de zaps..." onChange={(e) => chooseGoal(e.target.value)}></Input>
+            <Input data-identifier="goals-input" placeholder="Digite sua meta de zaps..." onChange={(e) => chooseGoal(e.target.value)}></Input>
             <Button disabled={disableButton} onClick={playRecall}>Iniciar Recall!</Button>
         </>
     )
