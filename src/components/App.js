@@ -57,6 +57,7 @@ export default function App() {
 
     function openCard(index) {
         setSelectedCard([])
+        setRotatedCard([])
         setSelectedCard([index])
 
     }

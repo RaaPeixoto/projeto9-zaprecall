@@ -8,23 +8,26 @@ import rotate from "../assets/img/seta_virar.png"
 export default function Cards({ card, index, selectedCard, openCard, rotateCard, rotatedCard, redButtonClicked, orangeButtonClicked, greenButtonClicked, colorButton }) {
 
 
-
-
   return (
     <>
       {selectedCard.includes(index) ? //verifica se vai aparecer só o nome 
         //se incluir na carta aberta
         /* rotatedCard.includes(index)? // verifica se vai estar virada ou não  */
+
         <>
-          {rotatedCard.includes(index) ?
+
+          <Card>
             <BackCard index={index} rotadedCard={rotatedCard}> <p data-identifier="flashcard-answer">{card.resposta} </p>
               <Buttons>
                 <Button data-identifier="forgot-btn" color="#FF3030" value="red" index={index} onClick={(e) => colorButton(index, e.target.value)}>Não lembrei</Button>
                 <Button data-identifier="almost-forgot-btn" color="#FF922E" value="orange" index={index} onClick={(e) => colorButton(index, e.target.value)}>Quase não lembrei</Button>
-                <Button data-identifier="zap-btn"color="#2FBE34" value="green" index={index} onClick={(e) => colorButton(index, e.target.value)}>Edureka!</Button>
+                <Button data-identifier="zap-btn" color="#2FBE34" value="green" index={index} onClick={(e) => colorButton(index, e.target.value)}>Edureka!</Button>
               </Buttons>
-            </BackCard> :
-            <FrontCard index={index} rotadedCard={rotatedCard}> <p data-identifier="flashcard-question">{card.pergunta}</p> <img src={rotate} onClick={() => rotateCard(index)} alt="rotate" data-identifier="flashcard-turn-btn"/></FrontCard>}
+            </BackCard>
+            <FrontCard index={index} rotadedCard={rotatedCard}> <p data-identifier="flashcard-question">{card.pergunta}</p> <img src={rotate} onClick={() => rotateCard(index)} alt="rotate" data-identifier="flashcard-turn-btn" />
+            </FrontCard>
+          </Card>
+
         </>
         :
         //se não incluir na carta aberta
@@ -33,25 +36,25 @@ export default function Cards({ card, index, selectedCard, openCard, rotateCard,
           {greenButtonClicked.includes(index) ?
             <ClosedCard index={index} colorItem="#2FBE34" textDecoration="line-through" data-identifier="flashcard">
               <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
-              <img src={greenIcon} alt="Green Icon" data-identifier="flashcard-status"/>
+              <img src={greenIcon} alt="Green Icon" data-identifier="flashcard-status" />
             </ClosedCard>
             :
 
             orangeButtonClicked.includes(index) ?
               <ClosedCard index={index} colorItem="#FF922E" data-identifier="flashcard">
                 <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
-                <img src={orangeIcon} alt="Orange Icon" data-identifier="flashcard-status"/>
+                <img src={orangeIcon} alt="Orange Icon" data-identifier="flashcard-status" />
               </ClosedCard>
               :
               redButtonClicked.includes(index) ?
                 <ClosedCard index={index} colorItem="#FF3030" textDecoration="line-through" data-identifier="flashcard">
                   <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
-                  <img src={redIcon} alt="Red Icon" data-identifier="flashcard-status"/>
+                  <img src={redIcon} alt="Red Icon" data-identifier="flashcard-status" />
                 </ClosedCard>
                 :
                 <ClosedCard index={index} colorItem="#333333" textDecoration="none" data-identifier="flashcard" >
                   <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
-                  <img src={play} onClick={() => openCard(index)} alt="play" data-identifier="flashcard-show-btn"/>
+                  <img src={play} onClick={() => openCard(index)} alt="play" data-identifier="flashcard-show-btn" />
                 </ClosedCard>
           }
 
@@ -64,13 +67,16 @@ export default function Cards({ card, index, selectedCard, openCard, rotateCard,
 }
 
 
-
-const FrontCard = styled.div`
- 
- width: 300px;
+const Card = styled.div`
   margin: 12px;
+  width: 300px;
+  min-height: 150px;
+  height:auto;
+  position:relative;
+`
+const FrontCard = styled.div`
   padding: 15px;
-  min-height: 100px;
+height:100%;
   background: #FFFFD5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -83,9 +89,12 @@ const FrontCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-    backface-visibility: hidden;
-  transition: all .5s;
-transform: ${props => props.rotadedCard.includes(props.index) ? "rotateY(180deg)" : "rotateY(0deg)"};
+  transition: all 1s;
+  transform-style: preserve-3d;
+top:0;
+position:absolute;
+backface-visibility: hidden;
+transform: ${props => props.rotadedCard.includes(props.index) ? "rotateY(-180deg)" : "rotateY(0deg)"};
 img{
   position: absolute;
   bottom: 10px;
@@ -94,17 +103,17 @@ img{
     
 `
 const BackCard = styled(FrontCard)`
-
-width: 300px;
+ 
   padding:0;
   transform: ${props => props.rotadedCard.includes(props.index) ? "rotateY(0deg)" : "rotateY(180deg)"};
   p{
     padding: 15px;
+
   }
 `
 
 const ClosedCard = styled.div`
-width: 300px;
+  width: 300px;
   height: 65px;
   background-color: #FFFFFF;
   margin: 12px;
@@ -116,7 +125,7 @@ width: 300px;
   justify-content: space-between;
 
   p{
-    font-family: 'Recursive',sans-serif;
+  font-family: 'Recursive',sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -134,7 +143,8 @@ const Buttons = styled.div`
   display: flex;
   width: 270px;
   justify-content: space-between;
-  margin: 13px;
+  margin: 20px 13px;
+ 
   
 `
 const Button = styled.button`
