@@ -41,7 +41,7 @@ export default function Cards({ card, index, selectedCard, openCard, rotateCard,
             :
 
             orangeButtonClicked.includes(index) ?
-              <ClosedCard index={index} colorItem="#FF922E" data-identifier="flashcard">
+              <ClosedCard index={index} colorItem="#FF922E" textDecoration="line-through" data-identifier="flashcard">
                 <p data-identifier="flashcard-index-item">Pergunta {index + 1}</p>
                 <img src={orangeIcon} alt="Orange Icon" data-identifier="flashcard-status" />
               </ClosedCard>
